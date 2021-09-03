@@ -3257,6 +3257,7 @@ input, select, textarea {
 	}
 
 	/* Pulse Grow */
+	/* Source for hover animations: http://ianlunn.github.io/Hover/ */
 @-webkit-keyframes hvr-pulse-grow {
 	to {
 	  -webkit-transform: scale(1.1);
