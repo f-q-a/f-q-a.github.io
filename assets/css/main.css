@@ -2127,10 +2127,13 @@ input, select, textarea {
 			display: block;
 			margin: 0 0 2em 0;
 			width: 100%;
+			height: 100%;
 		}
 
 			.image.fit img {
 				width: 100%;
+				height: 100%;
+				display: block;
 			}
 
 		.image.avatar {
@@ -2453,7 +2456,6 @@ input, select, textarea {
 		height: 3.15em;
 		height: calc(2.75em + 6px);
 		line-height: 2.75em;
-		min-width: 10em;
 		padding: 0 1.5em;
 		text-align: center;
 		text-decoration: none;
@@ -2563,13 +2565,14 @@ input, select, textarea {
 
 		.work-item h3 {
 			font-size: 1em;
+			font-weight: bold;
 			margin: 0 0 0.5em 0;
 		}
 
 		.work-item p {
-			font-size: 0.8em;
+			font-size: 0.9em;
 			line-height: 1.5em;
-			margin: 0;
+			margin: 1em 0;
 		}
 
 /* Header */
@@ -3224,6 +3227,14 @@ input, select, textarea {
 		width: 100%;
 		height: 100%;
 		margin-right: 2em;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.skill-icon > a {
+		border-bottom: none;
 	}
 
 	.dev{
@@ -3231,10 +3242,11 @@ input, select, textarea {
 	}
 
 	.skill-container{
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		margin-top: 1em;
+		display: grid;
+		grid-template-columns: auto auto auto;
+		grid-template-rows: auto auto auto;
+		gap: 10px 10px;
+		width: 1080px;
 	}
 
 	.last-container{
@@ -3243,3 +3255,61 @@ input, select, textarea {
 		justify-content: flex-start;
 		margin-top: 1em;
 	}
+
+	/* Pulse Grow */
+@-webkit-keyframes hvr-pulse-grow {
+	to {
+	  -webkit-transform: scale(1.1);
+	  transform: scale(1.1);
+	}
+  }
+  @keyframes hvr-pulse-grow {
+	to {
+	  -webkit-transform: scale(1.1);
+	  transform: scale(1.1);
+	}
+  }
+  .hvr-pulse-grow {
+	vertical-align: middle;
+	-webkit-transform: perspective(1px) translateZ(0);
+	transform: perspective(1px) translateZ(0);
+	box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+	border-bottom: none;
+  }
+  .hvr-pulse-grow:hover, .hvr-pulse-grow:focus, .hvr-pulse-grow:active {
+	-webkit-animation-name: hvr-pulse-grow;
+	animation-name: hvr-pulse-grow;
+	-webkit-animation-duration: 0.3s;
+	animation-duration: 0.3s;
+	-webkit-animation-timing-function: linear;
+	animation-timing-function: linear;
+	-webkit-animation-iteration-count: infinite;
+	animation-iteration-count: infinite;
+	-webkit-animation-direction: alternate;
+	animation-direction: alternate;
+  }
+  .skill-anchor{
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-decoration: none;
+  }
+
+  .skill-anchor:link{
+	  text-decoration: none;
+  }
+
+  .dev:link{
+	  text-decoration: none;
+  }
+
+  .top-half{
+	  display: block;
+	  height: 170px;
+
+  }
+
+  .bottom-half{
+	  display: block;
+	  margin-top: 1em;
+  }
